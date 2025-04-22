@@ -1,0 +1,30 @@
+exchanges:
+  binance:
+    api_key: "YOUR_API_KEY"
+    api_secret: "YOUR_API_SECRET"
+    futures: true
+  
+  cetus:
+    rpc_url: "https://fullnode.mainnet.sui.io:443"
+    pool_address: "0x2e041f3fd93646dcc877f783c1f2b7fa62d30271bdef1f21ef002cebf857bded" # SUI-USDC池地址
+    private_key: "YOUR_SUI_WALLET_KEY"
+
+strategy:
+  base_amount: 10000     # USDC初始数量
+  price_range: 0.15       # ±15%区间
+  rebalance_threshold: 0.03 
+  check_interval: 600    # 10分钟
+  fee_tier: 0.25         # 手续费等级[6](@ref)
+
+notifications:
+  telegram:
+    bot_token: "YOUR_TG_BOT_TOKEN"
+    chat_id: "YOUR_CHAT_ID"
+
+tokens:
+  sui:
+    decimals: 9
+    type: "0x2::sui::SUI"
+  usdc:
+    decimals: 6  
+    type: "0x5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93b::coin::COIN"
